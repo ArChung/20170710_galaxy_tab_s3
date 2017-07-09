@@ -1,0 +1,391 @@
+
+html,body 
+	width: 100%
+	height: 100%
+
+=aBtn
+	+dTime(.1s)
+	cursor: pointer
+	&:hover 
+		+opacity(0.7)
+// =goCenter 
+// 	position: relative
+// 	left: 50%
+// 	+transform(translateX(-50%))
+
+
++keyframes(bar2)
+	0%
+		left: -30%
+	40%
+		 
+		left: 125%
+	100%
+		left: 125%
++keyframes(arr)
+	0%
+		left: 5px
+	50%
+		 
+		left: 0
+	100%
+		left: 5px
+
+=sBtn
+	+bg('btnBg.png')
+	color: #fff
+	font-size: 1.8rem
+	letter-spacing: 0.2em
+	text-align: center
+	+border-radius(10px)
+	overflow: hidden
+	position: relative
+	cursor: pointer
+	display: block
+
+
+	&:after
+		content: ''
+		position: absolute
+		width: 15%
+		height: 100%
+		background-color: rgba(#f9f5e0,0.6) 
+		+transform(skewX(-30deg))
+		left: -30%
+		+animation(bar2 3s infinite)
+	+box-shadow(2px 2px 6px rgba(20%,20%,20%,0.6))
+	
+
+	&:hover 
+		+box-shadow(1px 1px 1px rgba(20%,20%,20%,0.6))
+		top: 1px
+		+opacity(0.95)
+		text-decoration: none
+=title		
+	position: relative
+	&.active 
+		&:before
+			+opacity(1)
+			
+	&:before
+		content: ''
+		
+		+opacity(0)
+		+dTime
+		position: absolute
+		top: 50%
+		left: 50%
+		+transform(translateX(-50%) translateY(-50%))
+		+bg('txtink.png')
+		z-index: -1
+
+
+.header 
+	position: fixed
+	// z-index: 5
+	top: 0
+	width: 100%
+	height: 60px
+	left: 0
+	background-color: rgba(#121111,0.8)
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	z-index: 5
+	.menu 
+		margin: 0 auto
+		display: inline-block
+		.mBtn
+			display: inline-block
+			color: #fff
+			padding: 0 20px
+			letter-spacing: 0.2em
+			+aBtn
+			+notLast 
+				border-right: 1px solid #fff
+.ink 
+	position: absolute
+	z-index: -1
+	top: 0
+	left: 0
+	width: 100%
+	pointer-events: none
+
+	@for $i from 1 through 5
+		.ink#{$i}
+			+bg('ink#{$i}.png')
+			position: absolute
+	.ink1
+		top: 1033px
+		left: 0
+	.ink2
+		top: 342px
+		right: 0
+	.ink3
+		top: 2101px
+		left: 0
+	.ink4
+		top: 2953px
+		right: 0
+
+	.ink5
+		top: 4147px
+		left: 50%
+		margin-left: -780px
+
+.container
+	position: relative
+	z-index: 2
+	.kv 
+		position: relative
+		padding-top: 540px
+		.picBox 
+			position: absolute
+			left: 50%
+			margin-left: -1294px / 2 
+			top: -60px
+			width: 1293px
+			height: 821px
+			@for $i from 1 through 4
+				.p#{$i}
+					+bg('pp#{$i}.png')
+					position: absolute
+		.txtBox
+			
+			.title
+				+bg('kv1.png')
+				margin: 0 auto
+
+			.btn
+				margin: 0 auto
+				margin-top: 30px
+				+sBtn
+
+
+				
+			
+
+	.shareBox
+		margin-top: 90px
+		.title 
+			+bg('t1.png')
+			margin: 0 auto
+			+title
+			margin-bottom: 70px
+		.shareWrap
+			.sBox
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				flex-wrap: nowrap
+				justify-content: space-between
+				width: 900px
+				margin: 0 auto
+				margin-bottom: 70px
+				min-height: 230px
+				+dTime
+				+opacity(0)
+				&.active
+					+opacity(1)
+					width: 780px
+				+clearfix
+				@for $i from 1 through 4
+					&:nth-child(#{$i})
+						.picBox
+							+bg('p#{$i}.png')
+						.txtBox
+							.txt 
+								+bg('tt#{$i}.png')
+							.moreBtn
+								color: #2626dc
+								// text-decoration: underline
+								font-size: 1.4rem
+								letter-spacing: 0.1em
+								margin-top: 8px
+								font-weight: bold
+								// display: block
+								display: inline-block
+								float: left
+								border-bottom: 1px solid #2626dc
+								cursor: pointer
+								&:hover 
+									text-decoration: none
+								&:after
+									content: '>'
+									color: #2626dc
+									position: relative
+									+animation(arr .6s linear infinite)
+
+						@if $i % 2 == 1
+							flex-direction: row-reverse
+							.txtBox
+								.moreBtn 
+									float: right
+	.arrBtn
+		+bg('scroll.png')
+		margin: 40px auto
+		cursor: pointer
+	.tabBox
+		margin-top: 70px
+		.title
+			+bg('t2.png')
+			margin: 0 auto
+			+title
+			margin-bottom: 70px
+		.tabsBox 
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex 
+			justify-content: center
+			.tab 
+				display: -webkit-inline-flex
+				display: -moz-inline-flex
+				display: -ms-inline-flex
+				display: -o-inline-flex
+				display: inline-flex
+				width: 200px
+				background-color: #fad19e
+				height: 40px
+				justify-content: center
+				align-items: center
+				vertical-align: text-top
+				cursor: pointer
+				+notLast 
+					margin-right: 5px
+
+				&:hover 
+					background-color: #f3be7c
+
+			@for $i from 1 through 4
+				.t_#{$i}
+					.txt 
+						+bg('ttt#{$i}.png')
+		.subContainer 
+			margin-top: 50px
+			.box 
+				display: none
+				.pic 
+					margin: 0 auto
+				.btn
+					+sBtn
+					margin: 0 auto
+					margin-top: 50px
+			.box1
+				.pic 
+					+bg('tabb1.png')
+					
+			.box2
+				.pic
+					+bg('tabb2.png')
+					position: relative
+					margin: 0 auto
+					.content
+						position: absolute
+						border: 1px solid black
+						width: 480px
+						height: 356px
+						top: 26px
+						left: 166px
+			.box3
+				.pic 
+					+bg('tabb3.png')
+				.btn 
+					letter-spacing: 0.05em
+		@for $i from 1 through 3 
+			&.channel_#{$i}
+				.tabsBox
+					.t_#{$i}
+						background-color: #f3be7c
+				.subContainer
+					.box#{$i}
+						display: block
+
+			
+		
+	.workWrap
+		position: relative
+		width: 763px
+		margin: 0 auto
+		margin-top: 50px
+		.swiper-wrapper
+			@for $i from 1 through 4
+				.s_#{$i}
+					+bg('w#{$i}.png') 
+					+coverBg
+					+aBtn
+		.prevBtn
+			+bg('arl.png')
+			position: absolute
+			top: 50%
+			margin-top: -30px
+			left: -70px
+			cursor: pointer
+		.nextBtn
+			+bg('arr.png')
+			position: absolute
+			top: 50%
+			margin-top: -30px
+			right: -70px
+			cursor: pointer
+	.proBox
+		margin-top: 70px
+		.title	
+			+title 
+			+bg('t3.png')
+			margin: 0 auto
+			margin-bottom: 70px
+		.pic 
+			+bg('pic.png')
+			margin: 0 auto
+			position: relative
+			.pp
+				position: absolute
+				+bg('song.png')
+				top: 180px
+				left: 410px
+		.btn
+			+sBtn
+			margin: 0px auto
+			margin-top: -20px
+		.txt
+			margin: 30px auto
+			+bg('txt.png')
+
+	.wayBox
+		margin-top: 150px
+		.title
+			+title 
+			+bg('t4.png')
+			position: relative
+			margin: 0 auto
+			.pen
+				+bg('pen.png')
+				position: absolute
+				top: -85px
+				left: 220px
+		.wayContent 
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			width: 660px
+			margin: 0 auto
+			margin-top: 70px
+			justify-content: space-between
+			.btn1 
+				+bg('b1.png')
+				cursor: pointer
+				+aBtn
+			.btn2 
+				+bg('b2.png')
+				cursor: pointer
+				+aBtn
+				

@@ -1,0 +1,110 @@
+doctype html
+html
+	include meta
+//- head
+//- 	include meta
+body
+	.mainContainer
+		.header 
+			.menu.f20
+				.mBtn.mBtn1(data-href='kv') 產品介紹
+				.mBtn.mBtn2(data-href='shareBox') 達人分享
+				.mBtn.mBtn3(data-href='tabBox') Thomas 天空異想
+				.mBtn.mBtn4(data-href='proBox') 近期優惠
+				.mBtn.mBtn5(data-href='wayBox') 指定通路
+
+		.container 
+			.kv 
+				.picBox
+					.pic.p1
+					.pic.p2
+					.pic.p3
+					.pic.p4
+				.txtBox 
+					.title
+					a.btn(href='#',target='_blank') 了解產品
+			.shareBox
+				.title.aniTitle
+				.shareWrap
+					.sBox
+						.picBox
+						.txtBox
+							.txt 
+							a.moreBtn 閱讀全文
+					.sBox
+						.picBox 
+						.txtBox
+							.txt 
+							a.moreBtn 閱讀全文
+					.sBox
+						.picBox
+						.txtBox
+							.txt 
+							a.moreBtn 閱讀全文
+					.sBox
+						.picBox
+						.txtBox
+							.txt 
+							a.moreBtn 閱讀全文
+				.arrBtn				
+			.tabBox.channel_1
+				.title.aniTitle
+				.tabsBox 
+					.tab.t_1
+						.txt
+					.tab.t_2
+						.txt
+					.tab.t_3
+						.txt
+				.subContainer
+					.box.box1
+						.pic 
+						.btn 作品欣賞 
+					.box.box2
+						.pic
+							.content
+					.box.box3
+						.pic 
+						.btn 了解活動詳情
+			.workWrap
+				.swiper-container
+					.swiper-wrapper
+						.swiper-slide.s_1
+						.swiper-slide.s_2
+						.swiper-slide.s_3
+						.swiper-slide.s_4
+						.swiper-slide.s_1
+						.swiper-slide.s_2
+						.swiper-slide.s_3
+						.swiper-slide.s_4
+				.prevBtn
+				.nextBtn
+			.proBox
+				.title.aniTitle
+				.pic 
+					.pp
+				.btn 了解AKG調校
+				.txt
+			.wayBox
+				.title.aniTitle
+					.pen
+				.wayContent 
+					.btn1 
+					.btn2 
+		.ink 
+			.ink1
+			.ink2
+			.ink3
+			.ink4
+			.ink5
+
+
+
+	.loadPicWrap(style='display:none')
+		img(src='images/pp1.png')
+		img(src='images/pp2.png')
+		img(src='images/pp3.png')
+		img(src='images/pp4.png')
+
+	
+	script(type='text/javascript', src='js/index.js')
