@@ -42,8 +42,11 @@ html,body
 	position: relative
 	cursor: pointer
 	display: block
-
-
+	+phone 
+		+bg('mBtn.png')
+		font-size: 3rem
+		+border-radius(15px)
+		
 	&:after
 		content: ''
 		position: absolute
@@ -82,7 +85,6 @@ html,body
 
 .header 
 	position: fixed
-	// z-index: 5
 	top: 0
 	width: 100%
 	height: 60px
@@ -106,6 +108,8 @@ html,body
 			+aBtn
 			+notLast 
 				border-right: 1px solid #fff
+	+phone 
+		display: none
 .ink 
 	position: absolute
 	z-index: -1
@@ -121,38 +125,61 @@ html,body
 	.ink1
 		top: 1033px
 		left: 0
+		+phone 
+			+scale(.5)
+			+transform-origin(0%,50%)
 	.ink2
 		top: 342px
 		right: 0
+		+phone 
+			+scale(.5)
+			+transform-origin(100%,50%)
 	.ink3
 		top: 2101px
 		left: 0
+		+phone 
+			+scale(.5)
+			+transform-origin(0%,50%)
+
 	.ink4
 		top: 2953px
 		right: 0
+		+phone 
+			+scale(.5)
+			+transform-origin(100%,50%)
 
 	.ink5
 		top: 4147px
 		left: 50%
 		margin-left: -780px
+		+phone 
+			+scale(.5)
+			+transform-origin(0%,50%)
 
 .container
 	position: relative
 	z-index: 2
+	+phone 
+		overflow: hidden
 	.kv 
 		position: relative
-		padding-top: 540px
-		.picBox 
-			position: absolute
-			left: 50%
-			margin-left: -1294px / 2 
-			top: -60px
-			width: 1293px
-			height: 821px
-			@for $i from 1 through 4
-				.p#{$i}
-					+bg('pp#{$i}.png')
-					position: absolute
+		
+		+pc
+			padding-top: 540px
+			.picBox 
+				position: absolute
+				left: 50%
+				margin-left: -1294px / 2 
+				top: -60px
+				width: 1293px
+				height: 821px
+				@for $i from 1 through 4
+					.p#{$i}
+						+bg('pp#{$i}.png')
+						position: absolute
+		+phone 
+			.picBox 
+				+bg('m_kv.png')	 					
 		.txtBox
 			
 			.title
@@ -183,7 +210,6 @@ html,body
 				display: -o-flex
 				display: flex
 				flex-wrap: nowrap
-				justify-content: space-between
 				width: 900px
 				margin: 0 auto
 				margin-bottom: 70px
@@ -193,14 +219,31 @@ html,body
 				&.active
 					+opacity(1)
 					width: 780px
-				+clearfix
+				
+				+pc
+					justify-content: space-between
+					+clearfix
+
+				+phone 
+					+opacity(1)
+					width: 100%
+					flex-wrap: wrap
+					justify-content: center
+
 				@for $i from 1 through 4
 					&:nth-child(#{$i})
 						.picBox
 							+bg('p#{$i}.png')
+
 						.txtBox
-							.txt 
-								+bg('tt#{$i}.png')
+
+							.txt
+								+pc 
+									+bg('tt#{$i}.png')
+								+phone 
+									+bg('mt#{$i}.png')
+									margin-top: 30px
+
 							.moreBtn
 								color: #2626dc
 								// text-decoration: underline
@@ -220,12 +263,19 @@ html,body
 									color: #2626dc
 									position: relative
 									+animation(arr .6s linear infinite)
+								+phone 
+									float: none
+									margin: 15px auto
+									font-size: 2rem
+									text-align: center
+									margin-left: 140px
+						+pc		
+							@if $i % 2 == 1
 
-						@if $i % 2 == 1
-							flex-direction: row-reverse
-							.txtBox
-								.moreBtn 
-									float: right
+								flex-direction: row-reverse
+								.txtBox
+									.moreBtn 
+										float: right
 	.arrBtn
 		+bg('scroll.png')
 		margin: 40px auto
@@ -257,6 +307,9 @@ html,body
 				align-items: center
 				vertical-align: text-top
 				cursor: pointer
+				+phone 
+					width: 170px
+					height: 60px
 				+notLast 
 					margin-right: 5px
 
@@ -280,10 +333,14 @@ html,body
 			.box1
 				.pic 
 					+bg('tabb1.png')
+					+phone 
+						+bg('m_tabb1.png')
 					
 			.box2
 				.pic
 					+bg('tabb2.png')
+					+phone 
+						+bg('m_tabb2.png')
 					position: relative
 					margin: 0 auto
 					.content
@@ -293,9 +350,16 @@ html,body
 						height: 356px
 						top: 26px
 						left: 166px
+						+phone 
+							width: 339px
+							height: 249px
+							top: 18px
+							left: 116px
 			.box3
 				.pic 
 					+bg('tabb3.png')
+					+phone 
+						+bg('m_tabb3.png')
 				.btn 
 					letter-spacing: 0.05em
 		@for $i from 1 through 3 
@@ -314,6 +378,8 @@ html,body
 		width: 763px
 		margin: 0 auto
 		margin-top: 50px
+		+phone 
+			width: 400px
 		.swiper-wrapper
 			@for $i from 1 through 4
 				.s_#{$i}
@@ -357,6 +423,8 @@ html,body
 		.txt
 			margin: 30px auto
 			+bg('txt.png')
+			+phone 
+				+bg('m_txt.png')
 
 	.wayBox
 		margin-top: 150px
@@ -376,16 +444,24 @@ html,body
 			display: -ms-flex
 			display: -o-flex
 			display: flex
-			width: 660px
 			margin: 0 auto
 			margin-top: 70px
-			justify-content: space-between
+			
+			+pc
+				justify-content: space-between
+				width: 660px
+			+phone 
+				flex-wrap: wrap
+				justify-content: center
 			.btn1 
 				+bg('b1.png')
 				cursor: pointer
 				+aBtn
+				margin-bottom: 50px
 			.btn2 
 				+bg('b2.png')
 				cursor: pointer
+				margin-bottom: 50px
+
 				+aBtn
 				

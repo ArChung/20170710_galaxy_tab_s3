@@ -7,21 +7,27 @@ $(document).ready(function() {
     initWork();
     initPro();
 
-    initIntro();
+
     initAni();
     initMenu();
 
-    $('.loadPicWrap').waitForImages({
-        finished: function() {
-        	// console.log(123)
-           indexAni.play();
-        },
-        each: function(loaded, count, success) {
-           
 
-        },
-        waitForAll: true
-    });
+    if (!ChungTool.isPhone()) {
+        initIntro();
+
+        $('.loadPicWrap').waitForImages({
+            finished: function() {
+                // console.log(123)
+                indexAni.play();
+            },
+            each: function(loaded, count, success) {
+
+
+            },
+            waitForAll: true
+        });
+    }
+
 })
 
 
@@ -45,21 +51,21 @@ function initAni() {
             var t = $(this)
             if (t.visible()) {
                 TweenMax.delayedCall(.3, function() {
-
                     t.addClass('active');
                 })
             }
         })
 
-        $('.shareBox .sBox').each(function() {
-            var t = $(this)
-            if (t.visible(true)) {
-                TweenMax.delayedCall(0.1, function() {
-                    t.addClass('active');
-                })
-            }
-        })
-
+        if (!ChungTool.isPhone()) {
+            $('.shareBox .sBox').each(function() {
+                var t = $(this)
+                if (t.visible(true)) {
+                    TweenMax.delayedCall(0.1, function() {
+                        t.addClass('active');
+                    })
+                }
+            })
+        }
     }, 200)
 }
 
@@ -79,15 +85,29 @@ function initTabBox() {
 }
 
 function initWork() {
-    var mySwiper = new Swiper('.swiper-container', {
-        speed: 400,
-        spaceBetween: 40,
-        // width: 763, 
-        slidesPerView: 4,
-        nextButton: '.workWrap .nextBtn',
-        prevButton: '.workWrap .prevBtn',
 
-    });
+
+    if (ChungTool.isPhone()) {
+        var mySwiper = new Swiper('.swiper-container', {
+            speed: 400,
+            spaceBetween: 15,
+            // width: 763, 
+            slidesPerView: 2,
+            nextButton: '.workWrap .nextBtn',
+            prevButton: '.workWrap .prevBtn',
+
+        });
+    } else {
+        var mySwiper = new Swiper('.swiper-container', {
+            speed: 400,
+            spaceBetween: 40,
+            // width: 763, 
+            slidesPerView: 4,
+            nextButton: '.workWrap .nextBtn',
+            prevButton: '.workWrap .prevBtn',
+
+        });
+    }
     var tB = $('.tabBox');
     $('.swiper-slide').click(function() {
         var t = $(this);
