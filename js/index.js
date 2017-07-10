@@ -53,8 +53,8 @@ function initAni() {
 
         $('.shareBox .sBox').each(function() {
             var t = $(this)
-            if (t.visible()) {
-                TweenMax.delayedCall(.1, function() {
+            if (t.visible(true)) {
+                TweenMax.delayedCall(0.1, function() {
                     t.addClass('active');
                 })
             }
