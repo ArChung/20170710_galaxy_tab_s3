@@ -31,6 +31,8 @@ $(document).ready(function() {
 })
 
 function initVideo() {
+
+
     var vp = $('.videoPop');
 
     vp.find('.clozBtn').click(function() {
@@ -39,7 +41,6 @@ function initVideo() {
     })
 
 
-    ChungTool.addYouTube(vp.find('.videoBox'), 'pYxLEQuhUdc');
 
 
     vp.find('.btn1').click(function(event) {
@@ -59,9 +60,16 @@ function initVideo() {
         }, 'slow');
     });
 
+    if (ChungTool.isOnline()) {
+        vp.removeClass('hide');
+        ChungTool.addYouTube(vp.find('.videoBox'), 'pYxLEQuhUdc');
+
+    }
+
 }
 
 function initMenu() {
+    var hd = $('.header');
     $('.header .mBtn').click(function() {
         var t = $(this);
         var next = t.attr('data-href');
@@ -69,12 +77,20 @@ function initMenu() {
         $('html,body').animate({
             scrollTop: $("." + next).offset().top - 120
         }, 'slow');
+
+        hd.toggleClass('phoneHide');
     })
+
+    $('.menuBtn_phone').click(function(event) {
+        hd.toggleClass('phoneHide');
+    });
 }
 
 
 
 function initAni() {
+    var stop = false;
+
     setInterval(function() {
         // console.log(123)
         $('.aniTitle').each(function() {
@@ -96,9 +112,32 @@ function initAni() {
                 }
             })
         }
+
+        if ($('.tabBox').visible() && !stop) {
+            console.log(123)
+            TweenMax.delayedCall(1, function() {
+                playTab();
+                console.log(456)
+            })
+            stop = true;
+        }
+
     }, 200)
 }
+var stopTab=false;
+function playTab() {
+    var tB = $('.tabBox');
 
+    var id = ChungTool.returnClassNameWithFilter(tB, 'channel_')*1;
+    console.log(id)
+    if (id < 3&&!stopTab) {
+        ChungTool.removeClassWithFilter(tB, 'ch');
+        tB.addClass('channel_' + (id + 1));
+        simpleShow(tB.find('.subContainer'));
+        TweenMax.delayedCall(2, playTab)
+    }
+
+}
 
 function initTabBox() {
     var tB = $('.tabBox');
@@ -108,7 +147,10 @@ function initTabBox() {
         ChungTool.removeClassWithFilter(tB, 'ch');
         tB.addClass('channel_' + id);
         simpleShow(tB.find('.subContainer'));
+        stopTab=true;
     })
+
+
 
 
 

@@ -106,10 +106,32 @@ html,body
 			padding: 0 20px
 			letter-spacing: 0.2em
 			+aBtn
-			+notLast 
-				border-right: 1px solid #fff
+			+pc
+				+notLast 
+					border-right: 1px solid #fff
 	+phone 
-		display: none
+		height: auto
+		padding: 50px 0
+		background-color: rgba(#121111,0.9)
+
+		.menu
+			.mBtn 
+				display: block
+				font-size: 3rem
+				padding: 30px 0
+				+notLast 
+					border-bottom: 1px solid #fff
+
+.menuBtn_phone
+	+phone 
+		+bg('menu.png')
+		position: fixed
+		top: 0
+		right: 0
+		cursor: pointer
+		z-index: 20
+	
+
 .ink 
 	position: absolute
 	z-index: -1

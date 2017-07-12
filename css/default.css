@@ -3205,12 +3205,37 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
 }
-.header .menu .mBtn:not(:last-child) {
-  border-right: 1px solid #fff;
+@media screen and (min-width: 769px) {
+  .header .menu .mBtn:not(:last-child) {
+    border-right: 1px solid #fff;
+  }
 }
 @media screen and (max-width: 768px) {
   .header {
-    display: none;
+    height: auto;
+    padding: 50px 0;
+    background-color: rgba(18, 17, 17, 0.9);
+  }
+  .header .menu .mBtn {
+    display: block;
+    font-size: 3rem;
+    padding: 30px 0;
+  }
+  .header .menu .mBtn:not(:last-child) {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menuBtn_phone {
+    width: 60px;
+    height: 60px;
+    background-image: url("../images/menu.png");
+    position: fixed;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 20;
   }
 }
 
