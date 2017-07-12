@@ -11,3 +11,6 @@
 [0710/132738.917:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: 存取被拒。 (0x5)
 [0710/132739.121:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: 存取被拒。 (0x5)
 [0710/235340.251:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: 存取被拒。 (0x5)
+[0712/112624.044:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Google\Chrome\settings.dat: 存取被拒。 (0x5)
+[0712/112630.731:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: 管道已結束。 (0x6D)
+[0712/112630.731:ERROR:crashpad_win.cc(223)] Crashpad handler failed to start, crash reporting disabled

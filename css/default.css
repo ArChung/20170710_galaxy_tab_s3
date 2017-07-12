@@ -3541,8 +3541,8 @@ html, body {
 }
 @media screen and (min-width: 769px) {
   .container .shareBox .shareWrap .sBox:nth-child(1) .txtBox .txt {
-    width: 365px;
-    height: 158px;
+    width: 362px;
+    height: 176px;
     background-image: url("../images/tt1.png");
   }
 }
@@ -3601,7 +3601,7 @@ html, body {
 @media screen and (min-width: 769px) {
   .container .shareBox .shareWrap .sBox:nth-child(2) .txtBox .txt {
     width: 359px;
-    height: 175px;
+    height: 170px;
     background-image: url("../images/tt2.png");
   }
 }
@@ -3711,7 +3711,7 @@ html, body {
 @media screen and (min-width: 769px) {
   .container .shareBox .shareWrap .sBox:nth-child(4) .txtBox .txt {
     width: 359px;
-    height: 177px;
+    height: 195px;
     background-image: url("../images/tt4.png");
   }
 }
@@ -3956,14 +3956,14 @@ html, body {
   }
 }
 .container .tabBox .subContainer .box3 .pic {
-  width: 681px;
-  height: 326px;
+  width: 399px;
+  height: 350px;
   background-image: url("../images/tabb3.png");
 }
 @media screen and (max-width: 768px) {
   .container .tabBox .subContainer .box3 .pic {
-    width: 381px;
-    height: 660px;
+    width: 399px;
+    height: 350px;
     background-image: url("../images/m_tabb3.png");
   }
 }
@@ -4131,19 +4131,19 @@ html, body {
   z-index: -1;
 }
 .container .proBox .pic {
-  width: 530px;
-  height: 577px;
+  width: 455px;
+  height: 563px;
   background-image: url("../images/pic.png");
   margin: 0 auto;
   position: relative;
 }
 .container .proBox .pic .pp {
   position: absolute;
-  width: 90px;
-  height: 89px;
+  width: 96px;
+  height: 95px;
   background-image: url("../images/song.png");
-  top: 180px;
-  left: 410px;
+  top: 168px;
+  left: 8px;
 }
 .container .proBox .btn {
   width: 159px;
@@ -4309,6 +4309,186 @@ html, body {
 .container .wayBox .wayContent .btn2:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
+}
+
+.videoPop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 20;
+  text-align: center;
+}
+.videoPop:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.videoPop .clozBtn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/cloz.png");
+  cursor: pointer;
+  top: -60px;
+  right: 20px;
+}
+.videoPop .centerWrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1000px;
+  height: 620px;
+}
+@media screen and (max-width: 768px) {
+  .videoPop .centerWrap {
+    width: 500px;
+    height: 390px;
+  }
+}
+.videoPop .videoBox {
+  position: relative;
+  width: 99%;
+}
+.videoPop .videoBox:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 56.25%;
+}
+.videoPop .videoBox > .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.videoPop .videoBox iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.videoPop .btnBox {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.videoPop .btnBox .btn1 {
+  width: 159px;
+  height: 32px;
+  background-image: url("../images/btnBg.png");
+  color: #fff;
+  font-size: 1.8rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  -moz-box-shadow: 2px 2px 6px rgba(51, 51, 51, 0.6);
+  -webkit-box-shadow: 2px 2px 6px rgba(51, 51, 51, 0.6);
+  box-shadow: 2px 2px 6px rgba(51, 51, 51, 0.6);
+  margin-right: 20px;
+}
+@media screen and (max-width: 768px) {
+  .videoPop .btnBox .btn1 {
+    width: 258px;
+    height: 53px;
+    background-image: url("../images/mBtn.png");
+    font-size: 3rem;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+  }
+}
+.videoPop .btnBox .btn1:after {
+  content: "";
+  position: absolute;
+  width: 15%;
+  height: 100%;
+  background-color: rgba(249, 245, 224, 0.6);
+  -moz-transform: skewX(-30deg);
+  -ms-transform: skewX(-30deg);
+  -webkit-transform: skewX(-30deg);
+  transform: skewX(-30deg);
+  left: -30%;
+  -moz-animation: bar2 3s infinite;
+  -webkit-animation: bar2 3s infinite;
+  animation: bar2 3s infinite;
+}
+.videoPop .btnBox .btn1:hover {
+  -moz-box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.6);
+  -webkit-box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.6);
+  box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.6);
+  top: 1px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
+  opacity: 0.95;
+  text-decoration: none;
+}
+.videoPop .btnBox .btn2 {
+  width: 159px;
+  height: 32px;
+  background-image: url("../images/btnBg.png");
+  color: #fff;
+  font-size: 1.8rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  -moz-box-shadow: 2px 2px 6px rgba(51, 51, 51, 0.6);
+  -webkit-box-shadow: 2px 2px 6px rgba(51, 51, 51, 0.6);
+  box-shadow: 2px 2px 6px rgba(51, 51, 51, 0.6);
+}
+@media screen and (max-width: 768px) {
+  .videoPop .btnBox .btn2 {
+    width: 258px;
+    height: 53px;
+    background-image: url("../images/mBtn.png");
+    font-size: 3rem;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+  }
+}
+.videoPop .btnBox .btn2:after {
+  content: "";
+  position: absolute;
+  width: 15%;
+  height: 100%;
+  background-color: rgba(249, 245, 224, 0.6);
+  -moz-transform: skewX(-30deg);
+  -ms-transform: skewX(-30deg);
+  -webkit-transform: skewX(-30deg);
+  transform: skewX(-30deg);
+  left: -30%;
+  -moz-animation: bar2 3s infinite;
+  -webkit-animation: bar2 3s infinite;
+  animation: bar2 3s infinite;
+}
+.videoPop .btnBox .btn2:hover {
+  -moz-box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.6);
+  -webkit-box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.6);
+  box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.6);
+  top: 1px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
+  opacity: 0.95;
+  text-decoration: none;
 }
 
 .padShow {

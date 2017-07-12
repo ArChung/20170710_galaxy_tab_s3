@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     initAni();
     initMenu();
-
+    initVideo();
 
     if (!ChungTool.isPhone()) {
         initIntro();
@@ -30,6 +30,36 @@ $(document).ready(function() {
 
 })
 
+function initVideo() {
+    var vp = $('.videoPop');
+
+    vp.find('.clozBtn').click(function() {
+        vp.find('.videoBox').empty();
+        simpleHide(vp);
+    })
+
+
+    ChungTool.addYouTube(vp.find('.videoBox'), 'pYxLEQuhUdc');
+
+
+    vp.find('.btn1').click(function(event) {
+        vp.find('.videoBox').empty();
+        simpleHide(vp);
+        $('html,body').animate({
+            scrollTop: $(".proBox").offset().top - 120
+        }, 'slow');
+    });
+
+
+    vp.find('.btn2').click(function(event) {
+        vp.find('.videoBox').empty();
+        simpleHide(vp);
+        $('html,body').animate({
+            scrollTop: $(".wayBox").offset().top - 120
+        }, 'slow');
+    });
+
+}
 
 function initMenu() {
     $('.header .mBtn').click(function() {
@@ -125,7 +155,7 @@ function initWork() {
 function initPro() {
     var tl = new TimelineMax({ repeat: -1 });
 
-    tl.to($('.proBox .pic .pp'), .2, { delay: .4, repeat: 3, yoyo: true, ease: Power2.easeInOut, marginTop: -8, marginLeft: 8 })
+    tl.to($('.proBox .pic .pp'), .2, { delay: .4, repeat: 3, yoyo: true, ease: Power2.easeInOut, marginTop: -8, marginLeft: -8 })
 }
 
 
