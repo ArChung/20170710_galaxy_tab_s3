@@ -3549,7 +3549,7 @@ html, body {
 @media screen and (max-width: 768px) {
   .container .shareBox .shareWrap .sBox:nth-child(1) .txtBox .txt {
     width: 388px;
-    height: 259px;
+    height: 322px;
     background-image: url("../images/mt1.png");
     margin-top: 30px;
   }
@@ -3608,7 +3608,7 @@ html, body {
 @media screen and (max-width: 768px) {
   .container .shareBox .shareWrap .sBox:nth-child(2) .txtBox .txt {
     width: 388px;
-    height: 321px;
+    height: 291px;
     background-image: url("../images/mt2.png");
     margin-top: 30px;
   }
@@ -3718,7 +3718,7 @@ html, body {
 @media screen and (max-width: 768px) {
   .container .shareBox .shareWrap .sBox:nth-child(4) .txtBox .txt {
     width: 388px;
-    height: 310px;
+    height: 336px;
     background-image: url("../images/mt4.png");
     margin-top: 30px;
   }
