@@ -13,9 +13,9 @@
 		
 =bg($pic-name)
 	@if file_exists("images/#{$pic-name}")
-		width: image-width("../images/#{$pic-name}")
-		height: image-height("../images/#{$pic-name}")
-		background-image: url("../images/#{$pic-name}")
+		width: image-width("images/#{$pic-name}")
+		height: image-height("images/#{$pic-name}")
+		background-image: url("images/#{$pic-name}")
 	@else
 		display: none
 =notLast 

@@ -7,19 +7,19 @@ html,body
 	+dTime(.1s)
 	cursor: pointer
 	&:hover 
-		+opacity(0.7)
+		+opacity(0.7) 
 // =goCenter 
 // 	position: relative
 // 	left: 50%
 // 	+transform(translateX(-50%))
 
-
+ 
 +keyframes(bar2)
 	0%
 		left: -30%
 	40%
 		 
-		left: 125%
+		left: 125% 
 	100%
 		left: 125%
 +keyframes(arr)
@@ -336,7 +336,7 @@ html,body
 					margin-right: 5px
 
 				&:hover 
-					background-color: #f3be7c
+					background-color: #d59d57
 
 			@for $i from 1 through 4
 				.t_#{$i}
@@ -376,8 +376,8 @@ html,body
 							width: 339px
 							height: 249px
 							top: 18px
-							left: 116px
-			.box3
+							left: 116px 
+			.box3 
 				.pic 
 					+bg('tabb3.png')
 					+phone 
@@ -388,9 +388,9 @@ html,body
 			&.channel_#{$i}
 				.tabsBox
 					.t_#{$i}
-						background-color: #f3be7c
+						background-color: #d59d57
 				.subContainer
-					.box#{$i}
+					.box#{$i}  
 						display: block
 
 			

@@ -3,6 +3,9 @@ html
 	include meta
 //- head
 //- 	include meta
+
+include css
+
 body
 
 	.mainContainer
@@ -21,8 +24,6 @@ body
 				.btnBox
 					.btn1 近期優惠
 					.btn2 指定通路
-
-
 		.container 
 			.kv 
 				.picBox
@@ -32,7 +33,7 @@ body
 					.pic.p4
 				.txtBox 
 					.title
-					a.btn(href='http://www.samsung.com/tw/tablets/galaxy-tab-s3-t825/',target='_blank') 了解產品
+					a.btn(href='http://www.samsung.com/tw/tablets/galaxy-tab-s3-t825/',target='_blank',onclick="var s=s_gi('sssamsung4tw,sssamsung4mstglobal'); s.linkTrackVars='eVar33,events'; s.linkTrackEvents='event45'; s.eVar33='know_product'; s.events='event45'; s.tl(this,'o', 'know_product');") 了解產品
 			.shareBox
 				.title.aniTitle
 				.shareWrap
@@ -40,22 +41,22 @@ body
 						.picBox
 						.txtBox
 							.txt 
-							a.moreBtn(href='http://www.samsung.com/tw/discover/mobile/galaxy-tabs3-audionet/',target='_blank') 閱讀全文
+							a.moreBtn(href='http://www.samsung.com/tw/discover/mobile/galaxy-tabs3-audionet/',target='_blank',onclick="var s=s_gi('sssamsung4tw,sssamsung4mstglobal'); s.linkTrackVars='eVar33,events'; s.linkTrackEvents='event45'; s.eVar33='blogBtn1'; s.events='event45'; s.tl(this,'o', 'blogBtn1');") 閱讀全文
 					.sBox
 						.picBox 
 						.txtBox
 							.txt 
-							a.moreBtn(href='http://www.samsung.com/tw/discover/mobile/galaxy-tabs3-blogger-dacota/',target='_blank') 閱讀全文
+							a.moreBtn(href='http://www.samsung.com/tw/discover/mobile/galaxy-tabs3-blogger-dacota/',target='_blank',onclick="var s=s_gi('sssamsung4tw,sssamsung4mstglobal'); s.linkTrackVars='eVar33,events'; s.linkTrackEvents='event45'; s.eVar33='blogBtn2'; s.events='event45'; s.tl(this,'o', 'blogBtn2');") 閱讀全文
 					.sBox
 						.picBox
 						.txtBox
 							.txt 
-							a.moreBtn(href='http://www.samsung.com/tw/discover/mobile/galaxy-tabs3-elle/',target='_blank') 閱讀全文
+							a.moreBtn(href='http://www.samsung.com/tw/discover/mobile/galaxy-tabs3-elle/',target='_blank',onclick="var s=s_gi('sssamsung4tw,sssamsung4mstglobal'); s.linkTrackVars='eVar33,events'; s.linkTrackEvents='event45'; s.eVar33='blogBtn3'; s.events='event45'; s.tl(this,'o', 'blogBtn3');") 閱讀全文
 					.sBox
 						.picBox
 						.txtBox
 							.txt 
-							a.moreBtn(href='http://www.samsung.com/tw/discover/mobile/galaxy-tabs3-blogger-kisplay/',target='_blank') 閱讀全文
+							a.moreBtn(href='http://www.samsung.com/tw/discover/mobile/galaxy-tabs3-blogger-kisplay/',target='_blank',onclick="var s=s_gi('sssamsung4tw,sssamsung4mstglobal'); s.linkTrackVars='eVar33,events'; s.linkTrackEvents='event45'; s.eVar33='blogBtn4'; s.events='event45'; s.tl(this,'o', 'blogBtn4');") 閱讀全文
 				.arrBtn
 			.tabBox.channel_1
 				.title.aniTitle
@@ -75,7 +76,7 @@ body
 							.content
 					.box.box3
 						.pic 
-						.btn 了解活動詳情
+						//- .btn 了解活動詳情
 			.workWrap
 				.swiper-container
 					.swiper-wrapper
@@ -93,14 +94,14 @@ body
 				.title.aniTitle
 				.pic 
 					.pp
-				a.btn(href='http://www.samsung.com/tw/discover/latest-news/mwc2017-akg/',target='_blank') 了解AKG調校
+				a.btn(href='http://www.samsung.com/tw/discover/latest-news/mwc2017-akg/',target='_blank',onclick="var s=s_gi('sssamsung4tw,sssamsung4mstglobal'); s.linkTrackVars='eVar33,events'; s.linkTrackEvents='event45'; s.eVar33='akgBtn'; s.events='event45'; s.tl(this,'o', 'akgBtn');") 了解AKG調校
 				.txt
 			.wayBox
 				.title.aniTitle
 					.pen
 				.wayContent 
-					a.btn1(href='https://events.samsung.com.tw/hhp/wa/index.aspx?p=64d110af-7d9f-4e24-b08e-38f672d05aa5&pm=Galaxy%20Tab%20S3',target='_blank') 
-					a.btn2(href='https://eshop.cht.com.tw/Web/Personal/mobile/details?productID=000200001580&parentMegaId=05978EA7-851C-450F-9CD0-429E1E8B2F34',target='_blank') 
+					a.btn1(href='https://events.samsung.com.tw/hhp/wa/index.aspx?p=64d110af-7d9f-4e24-b08e-38f672d05aa5&pm=Galaxy%20Tab%20S3',target='_blank',onclick="var s=s_gi('sssamsung4tw,sssamsung4mstglobal'); s.linkTrackVars='eVar35,events'; s.linkTrackEvents='event45'; s.eVar35='buy option'; s.events='event45'; s.tl(this,'o', 'buy option');") 
+					a.btn2(href='https://eshop.cht.com.tw/Web/Personal/mobile/details?productID=000200001580&parentMegaId=05978EA7-851C-450F-9CD0-429E1E8B2F34',target='_blank',onclick="var s=s_gi('sssamsung4tw,sssamsung4mstglobal'); s.linkTrackVars='eVar35,events'; s.linkTrackEvents='event45'; s.eVar35='buy option'; s.events='event45'; s.tl(this,'o', 'buy option');") 
 		.ink 
 			.ink1
 			.ink2
@@ -122,6 +123,6 @@ body
 		img(src='images/tabb3.png')
 
 
-
+	include js
 	
-	script(type='text/javascript', src='js/index.js')
+	//- script(type='text/javascript', src='js/index.js')
